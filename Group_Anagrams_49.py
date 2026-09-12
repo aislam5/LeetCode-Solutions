@@ -11,6 +11,12 @@ class Solution:
             my_dict[tuple(count)].append(word) #we make count a tuple since a lsit is not a hashable object
         return list(my_dict.values())
 
+    #Second Solution we will sort all the words in the list and then make entries of them in the dict
+    def groupAnagramsSecond(self, strs: list[str]) -> list[list[str]]:
+        for word in strs:
+            return 
+
+
 if __name__ == "__main__" :
     solution = Solution()
     test = ["eat","tea","tan","ate","nat","bat"]
