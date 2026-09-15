@@ -8,22 +8,24 @@ class Solution:
             my_dict[key] = my_dict.get(key, 0) + 1
         kMostFreq = heapq.nlargest(k, my_dict, key = my_dict.get)
         return kMostFreq
-        
     #Alternate Solutions and making a hashmap and then sorting it by the value and then returning the kth most frequent
     #Another Solution is that you make a hashmap and then based on that you make a list in a list [[],[],[],...] making it so
     #that the most frequent element is at the bottom of the list and then just output the bottom of the list
-    def topKFrequqentSecond(self, nums: list[int], k: int) -> list[int]:
+    def topKFrequentSecond(self, nums: list[int], k: int) -> list[int]:
         my_dict= {}
         answer = []
-        frequency = [[] for _ in range(len(nums))]
+        frequency = [[] for _ in range(len(nums)+1)]
         for key in nums:
             my_dict[key] = my_dict.get(key,0) + 1
 
-        for i in my_dict:
-            frequency[my_dict.get(i)].append(i)
+        for key, val in my_dict.items():
+            frequency[val].append(key)
 
-        while k != 0:
-            answer.append()
+        for i in range(len(frequency)-1, 0, -1):    #this goes in reverse for frequency
+            for j in frequency[i]:                  # this loops through the each element at index i 
+                answer.append(j)                  
+                if k == len(answer):                # if the answer list is as long as k
+                    return answer                   #just return the answer
+        return []
 
 
-            k -= 1
