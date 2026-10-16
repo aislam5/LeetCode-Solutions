@@ -1,9 +1,8 @@
 class Solution:
     def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
-        #ok for 4Sum
         result = []
         nums.sort()
-        for a in nums:
+        for a in range (len(nums)):
             for b in range(a+1,len(nums)):
                 l = b+1
                 r = len(nums) - 1
@@ -14,7 +13,9 @@ class Solution:
                     elif fourSum < target:
                         l += 1
                     else:
-                        result.append([nums[a], nums[b], nums[l], nums[r]])
+                        toAdd = [nums[a], nums[b], nums[l], nums[r]]
+                        if toAdd not in result:
+                            result.append(toAdd)
                         l+=1
                         r-=1
 
