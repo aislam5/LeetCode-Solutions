@@ -17,3 +17,4 @@ class Solution:
                     if popped != hashmap[char]:
                         return False 
         return not stack #this checks if the stack is empty by the end meaning there are not open brackets left behind
+1
