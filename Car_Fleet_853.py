@@ -45,7 +45,7 @@ if __name__ == "__main__":
 #time is almost over so go pray and then do this later if u find time in the day or postpone it till tomorrow"""
 
 class Solution:
-    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+    def carFleet(self, target: int, position: list[int], speed: list[int]) -> int:
         stack = []
         for pos, vel in sorted(zip(position, speed))[::-1]:
             dist = target - pos
